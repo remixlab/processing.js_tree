@@ -27,12 +27,22 @@ public class PApplet extends ProcessingJS {
 
 
 
+	public IJsEventHandler eventHandler;
 
 
-//	public void registerMethod(String string, Object scene) {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	public void setEventHaandler(IJsEventHandler eventHandler){
+		this.eventHandler = eventHandler;
+		
+	}
+
+
+
+	public void registerMethod( String methodName, Object agent) {
+		// TODO Auto-generated method stub
+//		JavaScriptObject canvas, 
+		
+		eventHandler.addMouseAgent(getCanvas(), agent, methodName);
+	}
 
 
 

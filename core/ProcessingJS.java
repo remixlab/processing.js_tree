@@ -93,7 +93,10 @@ public class ProcessingJS implements PConstants{
 		
 		
 		public PMatrix3D projmodelview() {
-			throw new UnsupportedOperationException("projmodelview.");
+			PMatrix3D retValue = new PMatrix3D();
+			retValue.set(projection());
+			retValue.apply(modelview());
+			return retValue;
 		}
 		
 		
@@ -111,11 +114,11 @@ public class ProcessingJS implements PConstants{
 		
 			var gl = this.@processing.core.ProcessingJS::gl;
 			//alert(gl);
-			console.debug(gl);	
+			//console.debug(gl);	
 			//console.log(gl);	
 			var pM = gl.getProjectionMatrix();
 			
-			console.debug(gl);	
+			//console.debug(gl);	
 			
 			return @processing.core.JsUtils::JavaScriptArray2Matrix3D(Lcom/google/gwt/core/client/JavaScriptObject;)(pM);
 					
@@ -280,12 +283,14 @@ public class ProcessingJS implements PConstants{
 		
 		public native int mouseX() /*-{
 			var gl = this.@processing.core.ProcessingJS::gl;
+		//	console.log(gl.mouseX);
 			return gl.mouseX;	
 			
 		}-*/;	
 		
 		public native int mouseY() /*-{
 			var gl = this.@processing.core.ProcessingJS::gl;	
+	//		console.log(gl.mouseY);
 			return gl.mouseY;
 		}-*/;
 
@@ -343,6 +348,7 @@ public class ProcessingJS implements PConstants{
 		
 		public native void translate(float x, float y, float z) /*-{
 			var gl = this.@processing.core.ProcessingJS::gl;
+			//console.log("translate");
 			gl.translate( x,  y,  z) ;	
 		
 		}-*/;	
@@ -595,16 +601,22 @@ public class ProcessingJS implements PConstants{
 
 
 						public  native void setProjection(PMatrix3D pMatrix) /*-{
+							
+																		
+							
 						var obj = @processing.core.JsUtils::Matrix3D2JavaScriptArray(Lprocessing/core/PMatrix3D;)(pMatrix);
 							
 						var gl = this.@processing.core.ProcessingJS::gl;
 						
 						var pM = gl.getProjectionMatrix();
+
 						
+																
 						pM.set( obj[0], obj[1], obj[2], obj[3], 
 								obj[4], obj[5], obj[6], obj[7], 
 								obj[8], obj[9], obj[10], obj[11],
 								obj[12], obj[13], obj[14], obj[15]);
+
 					
 					}-*/;
 
