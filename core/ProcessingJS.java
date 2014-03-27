@@ -69,7 +69,11 @@ public class ProcessingJS implements PConstants{
 
 //private JavaScriptObject canvas;
 	
-
+			public native char hey() /*-{
+			var gl = this.@processing.core.ProcessingJS::gl;
+			return gl.key;	
+			
+			}-*/;	
 	
 
 			public native final JavaScriptObject getCanvas() /*-{
