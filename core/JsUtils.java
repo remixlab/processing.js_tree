@@ -43,8 +43,8 @@ public class JsUtils {
 		  		
 		  		if(!isNaN(o) ) 	  		
 		  			retValue = o;
-		  		//else
-		  			//console.error(o);
+		  		else
+		  			console.error(o);
 		  			//retValue = -1.7320509;
 		  		
 		  		return retValue ; 
