@@ -580,7 +580,7 @@ public class ProcessingJS implements PConstants{
 						
 						public native void pushMatrix() /*-{
 						var gl = this.@processing.core.ProcessingJS::gl;
-						gl. pushMatrix();	
+						gl.pushMatrix();	
 					
 					}-*/;
 					
@@ -593,13 +593,18 @@ public class ProcessingJS implements PConstants{
 						
 						public  native void pushProjection() /*-{
 						var gl = this.@processing.core.ProcessingJS::gl;
-						gl.pushProjection();	
-					
+						
+						gl.pushProjMatrix();
+						   
+
 					}-*/;
+					
+
+					
 
 						public  native void popProjection() /*-{
 						var gl = this.@processing.core.ProcessingJS::gl;
-						gl.popProjection();	
+						gl.popProjMatrix();	
 					
 					}-*/;
 
