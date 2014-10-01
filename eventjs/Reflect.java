@@ -1,4 +1,4 @@
-package processing.core;
+package processing.eventjs;
 
 import com.gwtent.reflection.client.ClassType;
 import com.gwtent.reflection.client.TypeOracle;
